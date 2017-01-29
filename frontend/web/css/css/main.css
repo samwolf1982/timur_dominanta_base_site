@@ -523,7 +523,8 @@ padding: 1px;
 }
 .wrap_item{
 	padding: 0;
-	    padding-bottom: 0.5em;
+ padding-bottom: 10px;
+
 }
  .wrap_item_desc{
  	    padding: 0 4px;
@@ -553,6 +554,8 @@ padding: 1px;
 
 .thumbnail.right-caption {
     float: left;
+        height: 100%;
+
 }
 
 .thumbnail.right-caption > .caption {
@@ -643,7 +646,7 @@ padding: 1px;
 }
 
 .wrap_table{
-	padding-top: inherit;
+	padding-top: 0;
 }
 
 .table.obj_table>tbody>tr>td{
@@ -785,4 +788,9 @@ h1.title_room {
   max-height: 275px;
 }
 
+
+
+.carousel-control{
+  /*margin-bottom: 10px;*/
+}
 

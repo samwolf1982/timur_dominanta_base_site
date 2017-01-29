@@ -9,9 +9,9 @@ use yii\helpers\Html;
 class LargesliderWidget extends Widget
 {
     public $title;
-    public $img_filial;
-    public $url_filial;
     public $data_provider;
+    public $id_widget;
+    public $id_slider;
 
 
     public function init()
@@ -28,6 +28,24 @@ class LargesliderWidget extends Widget
      
           // id каталога,  ид карусели, тайтл, дата провайдер  
 
-        return $this->render('hi',['title_widget'=>$this->title,'img_filial'=>$this->img_filial,'url_filial'=>$this->url_filial,'data_provider'=>$this->data_provider]);
+        return $this->render('hi',['id_slider'=>$this->id_slider,'id_widget'=>$this->id_widget,'title_widget'=>$this->title,'data_provider'=>$this->data_provider]);
     }
+  public static  function shortDescription($fullDescription) {
+$shortDescription ='';
+
+$fullDescription = trim(strip_tags($fullDescription));
+
+if ($fullDescription) {
+$initialCount = 120;
+if (strlen($fullDescription) > $initialCount) {
+//$shortDescription = substr(strip_tags($fullDescription),0,$initialCount).”…”;
+$shortDescription = substr($fullDescription,0,$initialCount).'…';
+}
+else {
+return $fullDescription;
+}
+}
+
+return $shortDescription;
+}//End of function shortDescription
 }

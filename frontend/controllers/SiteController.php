@@ -20,6 +20,9 @@ use frontend\models\ContactForm;
 use common\models\Upslider;
 use common\models\UpsliderSearch;
 
+use common\models\RoomRecord;
+
+
 /**
  * Site controller
  */
@@ -92,10 +95,10 @@ class SiteController extends Controller
     // ]);
         // if (($model = Upslider::findOne($id)) !== null) {
              $upslider_provider=Upslider::find()->all();
+             $catalog_room_provider=RoomRecord::find()->all();
+     //Yii::trace($upslider_provider);
 
-     Yii::trace($upslider_provider);
-
-        return $this->render('index',['upslider_provider'=>$upslider_provider]);
+        return $this->render('index',['upslider_provider'=>$upslider_provider,'catalog_room_provider'=>$catalog_room_provider]);
     }
 
     /**

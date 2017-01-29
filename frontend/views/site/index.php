@@ -11,7 +11,8 @@ $this->title = 'My Yii Application';
      'img_filial'=>'img/verstka/left.jpg',
      'url_filial'=>'/filials',
      'data_provider'=>$upslider_provider,
-     ]); ?>
+     ]);
+?>
 
 
 
@@ -252,7 +253,9 @@ $this->title = 'My Yii Application';
                         </li>
                     </div>
 
-<?php   echo LargesliderWidget::widget(); ?>
+<?php   echo LargesliderWidget::widget(
+['id_widget'=>'catalog2','id_slider'=>'myCarousel2','title'=>'Каталог недвижимости "Доминанта"2','data_provider'=>$catalog_room_provider,]
+); ?>
 
 
 
@@ -266,7 +269,7 @@ $this->title = 'My Yii Application';
 
 
                     <div id="catalog3" class="catalog_upper" >
-                        <div class="catalog-title"><span>Каталог недвижимости "Доминанта"</span></div>
+                        <div class="catalog-title"><span>Каталог недвижимости "Доминанта3"</span></div>
 
                         <div class="catalog">
 
