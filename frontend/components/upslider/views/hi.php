@@ -24,7 +24,7 @@
                 <?php 
 
                    for ($i=0; $i <count($data_provider) ; $i++) { ?>
-             <li data-target="#myCarousel" data-slide-to="0" class="<?=$i==0?'active':''; ?>"></li>         
+             <li data-target="#myCarousel" data-slide-to="<?=$i ?>" class="<?=$i==0?'active':''; ?>"></li>         
                   <?php }
 
                  ?>
