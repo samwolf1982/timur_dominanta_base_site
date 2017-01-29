@@ -8,7 +8,11 @@ use yii\helpers\Html;
 
 class UpsliderWidget extends Widget
 {
-    public $message;
+    public $title;
+    public $img_filial;
+    public $url_filial;
+    public $data_provider;
+
 
     public function init()
     {
@@ -22,6 +26,6 @@ class UpsliderWidget extends Widget
     // Register AssetBundle
        UpsliderAsset::register($this->getView());
      
-        return $this->render('hi');
+        return $this->render('hi',['title_widget'=>$this->title,'img_filial'=>$this->img_filial,'url_filial'=>$this->url_filial,'data_provider'=>$this->data_provider]);
     }
 }

@@ -4,10 +4,10 @@
 		<div class="wrap-media">
 			<div class="media ">
 				<div class="media-top">
-					<div class="lead"> Сеть офисов «Доминанта»  сегодня: </div>
+					<div class="lead title_upslider_widget"> <?=$title_widget?></div>
 				</div>
 				<div class="media-body">
-					<a href="/filials"><img class="scale" src="img/verstka/left.jpg"></a>
+					<a href="<?=$url_filial?>"><img class="scale" src="<?=$img_filial?>"></a>
 				</div>
 			</div>
 		</div>
@@ -20,10 +20,19 @@
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
+
+                <?php 
+
+                   for ($i=0; $i <count($data_provider) ; $i++) { ?>
+             <li data-target="#myCarousel" data-slide-to="0" class="<?=$i==0?'active':''; ?>"></li>         
+                  <?php }
+
+                 ?>
+<!-- 
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
 				<li data-target="#myCarousel" data-slide-to="2"></li>
-				<li data-target="#myCarousel" data-slide-to="3"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li> -->
 			</ol>
 
 			<!-- Wrapper for slides -->
@@ -31,12 +40,20 @@
 
 
 				<?php
-				foreach (range(0, 5) as $key => $value) {?>
-				<div class="item <?= $value==0?'active':'';?> ">
-					<img src= "<?php Yii::getAlias('@frontend').'/web/';  ?>img/verstka/center-1140x380.png" alt="Chania" >
+				$i=0;
+
+
+				foreach ($data_provider as $key => $value) {
+  // Yii::trace($value);
+					?>
+               
+
+				<div class="wrap_img_upslider_widget item <?= ($i++)==0?'active':'';?> ">
+				  	<img class="img_upslider_widget" src= "<?= Yii::getAlias('@upload_folder_upslider').$value->img; ?>" alt="<?=$value->alt ?>" >
 					<div class="carousel-caption">
-						<h3>Chania</h3>
-						<p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+					<a class="nodecor" href="<?=$value->url ?>"><h3><?=$value->title ?></h3>
+						<p><?=$value->description ?></p>
+					</a>
 					</div>
 				</div>  
 

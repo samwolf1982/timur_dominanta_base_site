@@ -5,7 +5,12 @@ use frontend\components\upslider\UpsliderWidget;
 $this->title = 'My Yii Application';
 ?>
 
-<?php   echo UpsliderWidget::widget(); ?>
+<?php   echo UpsliderWidget::widget(
+    ['title' =>"Сеть офисов «Доминанта»  сегодня:",
+     'img_filial'=>'img/verstka/left.jpg',
+     'url_filial'=>'/filials',
+     'data_provider'=>$upslider_provider,
+     ]); ?>
 
 <!-- main wrap content -->
 <div class="container wrap_content">

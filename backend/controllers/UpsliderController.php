@@ -66,13 +66,6 @@ class UpsliderController extends Controller
     public function actionCreate()
     {
         $model = new Upslider();
-         
-
-      
-
-
-
-
         // if ($model->load(Yii::$app->request->post()) ) {
          if (Yii::$app->request->post()) {
                  
@@ -102,9 +95,6 @@ class UpsliderController extends Controller
  $post['Upslider']['img']= isset($uniqid)
                                ? "/{$today}/{$uniqid}".'/'.$f->baseName . '.' . $f->extension 
                                : "/{$today}".'/'.$f->baseName . '.' . $f->extension;
-                // Yii::trace();
-     
-
 
 
               if ($model->load($post)) {
@@ -116,9 +106,6 @@ class UpsliderController extends Controller
                       return $this->render('create', [
                 'model' => $model,]);  
                 }
-                
-                 //Yii::trace($filename);
-
 
               
                      
@@ -128,15 +115,6 @@ class UpsliderController extends Controller
             ]);
               }
 
-       
-              //  Yii::trace(Yii::$app->request->post());
-                 
-                  
-                  // $f->saveAs('../../frontend/web/upload/img/upslider/'. $f->baseName . '.' . $f->extension);
-
-
-
-               
           
 
         } else {
@@ -155,14 +133,76 @@ class UpsliderController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $model2 = new Upslider();
+             if (Yii::$app->request->post()) {
+                 
+                 $post=Yii::$app->request->post();
+                 $f=   UploadedFile::getInstance($model, 'img');
+                 $f2=   UploadedFile::getInstance($model2, 'img');
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+
+                 // Yii::trace($f);
+   //                Yii::trace($f2);
+   // return $this->render('update', [
+   //              'model' => $model,]); 
+               if (is_null($f2)) {
+                $post['Upslider']['img']=$model->img;
+               }else{
+
+
+                 $today=date("F-j-Y"); 
+                 $structure = Yii::getAlias('@upslider_upload')."/{$today}";
+                 $filename=$structure.'/'.$f->baseName . '.' . $f->extension;
+                 if (!file_exists($structure)) {
+                    if (!mkdir($structure, 0777, true)) {
+                    Yii::trace('Failed to create folders... line: '.__LINE__);
+                                                        } 
+                                                }
+
+
+ $post['Upslider']['img']= isset($uniqid)
+                               ? "/{$today}/{$uniqid}".'/'.$f->baseName . '.' . $f->extension 
+                               : "/{$today}".'/'.$f->baseName . '.' . $f->extension;
+                    }
+
+              if ($model->load($post)) {
+                 if (!is_null($f2)) {
+                     $f->saveAs($filename);
+                 }
+                
+                
+                if ($model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);   
+                }else{
+                      return $this->render('create', [
+                'model' => $model,]);  
+                }
+
+              
+                     
+              }else{
+                     return $this->render('create', [
+                'model' => $model,
+            ]);
+              }
+
+          
+
         } else {
-            return $this->render('update', [
+            return $this->render('create', [
                 'model' => $model,
             ]);
         }
+
+
+
+        // if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        //     return $this->redirect(['view', 'id' => $model->id]);
+        // } else {
+        //     return $this->render('update', [
+        //         'model' => $model,
+        //     ]);
+        // }
     }
 
     /**

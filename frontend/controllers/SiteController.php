@@ -13,6 +13,13 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 
+
+
+
+
+use common\models\Upslider;
+use common\models\UpsliderSearch;
+
 /**
  * Site controller
  */
@@ -83,7 +90,12 @@ class SiteController extends Controller
     //     'content' => 'Description of the page... Гугл'
     
     // ]);
-        return $this->render('index');
+        // if (($model = Upslider::findOne($id)) !== null) {
+             $upslider_provider=Upslider::find()->all();
+
+     Yii::trace($upslider_provider);
+
+        return $this->render('index',['upslider_provider'=>$upslider_provider]);
     }
 
     /**

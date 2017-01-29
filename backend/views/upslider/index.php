@@ -25,23 +25,21 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'img',
+            // 'img',
               [
             'attribute' => 'img',
-            'format' => 'html',
-            'label' => 'ImageColumnLable',
+            'format' => 'html', 
             'value' => function ($data) {
-                return Html::img('/pathToImage/' . $data['img'],
+                return Html::img(Yii::getAlias('@upload_folder_upslider') . $data['img'],
                     ['width' => '60px']);
             },
         ],
             'title',
             'description:ntext',
             'url:url',
+            'alt',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 </div>
-A Product of Yii Software LLCPowered by Yii Framework
-2.0.10 PHP 5.6.28 Status 200 Route gii/default/view Lo

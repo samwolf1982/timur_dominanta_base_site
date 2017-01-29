@@ -776,5 +776,13 @@ h1.title_room {
     font-weight: 700;
 }
 
+.wrap_img_upslider_widget h3,.wrap_img_upslider_widget p{
+  color: white;
+
+}
+.img_upslider_widget{
+  width: 100%;
+  max-height: 275px;
+}
 
 

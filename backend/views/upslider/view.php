@@ -39,6 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'description:ntext',
             'url:url',
+            'alt',
         ],
     ]); ?>
 

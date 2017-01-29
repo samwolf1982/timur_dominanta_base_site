@@ -9,6 +9,11 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
+
+         public $publishOptions = [
+        'forceCopy' => true,
+         //you can also make it work only in debug mode: 'forceCopy' => YII_DEBUG
+    ];
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [

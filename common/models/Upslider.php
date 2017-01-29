@@ -30,7 +30,7 @@ class Upslider extends \yii\db\ActiveRecord
     {
         return [
             [['description'], 'string'],
-            [['img', 'title', 'url'], 'string', 'max' => 255],
+            [['img', 'title', 'url','alt'], 'string', 'max' => 255],
         ];
     }
 
@@ -45,6 +45,7 @@ class Upslider extends \yii\db\ActiveRecord
             'title' => 'Заглавие',
             'description' => 'Описание',
             'url' => 'Ссылка',
+            'alt' => 'Описание картинки',
         ];
     }
 
