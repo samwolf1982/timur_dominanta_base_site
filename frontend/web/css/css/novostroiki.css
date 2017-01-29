@@ -1,0 +1,132 @@
+		.flip-clock-wrapper ul {
+        background: white;
+    }
+
+        .flip-clock-wrapper ul li a div.up:after {
+            background-color: #fff;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .flip-clock-wrapper ul li a div div.inn {
+            
+    color: #a42465;
+            text-shadow: 0 1px 1px #555;
+            background-color: white;
+        }
+        .flip-clock-divider{
+        	display: none;
+        }
+        .flip-clock-wrapper>.flip:last-child{
+        	display:none;
+        }
+
+
+        .clock{
+ 
+display: -webkit-inline-flex;
+display: -moz-inline-flex;
+display: -ms-inline-flex;
+display: -o-inline-flex;
+display: inline-flex;
+        }
+
+        .clock{
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    margin: 0;
+
+}
+.flip-clock-wrapper{
+    margin: 0;
+}
+
+.buy_text{
+    position: relative;
+       top: 1.5em;
+    font-size: large;
+}
+.fill_button{
+        background-color: #a42465;
+        color: white;
+        padding-top: 0;
+        height: 75px;
+}
+
+.cards-row{
+    padding-top: 1em;
+}
+.cards-row .thumbnail{
+    background-color: #e8e8e8;
+        padding-left: 0;
+    padding-right: 0;
+}
+ .cards-row .thumbnail img{
+     padding: 0.5em;
+}
+
+
+.wrap_h3{
+      text-align: center;
+    background-color: #a42465;
+    width: 100%;
+    border: 1px solid #a42465;
+    color: white;
+}
+
+ .cards-row .card-description{
+ padding-left: 1em;
+}
+
+.card_region{
+    padding-top: 1em;
+}
+
+
+.left-site-bar{
+  padding-top: 1em;
+}
+
+
+
+
+
+ .news-title{
+    width: 100%;
+   /* padding-left: 10px;*/
+       font-size: x-large;
+    background-color: rgba(159,20,90,1);
+    font-weight: bold;
+    color: white;
+        -webkit-border-radius: 10px 10px 0 0 ;
+        -moz-border-radius: 10px 10px 0 0;
+        border-radius: 10px 10px 0 0;
+            text-align: left;
+    text-indent: 0.5em;
+    
+}
+.news-title>a{
+    color: white;
+    text-decoration: none;
+
+}
+.news-box{
+    border: 1px #adadad solid;
+    -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+            margin-bottom: 1em;
+    }
+
+    .news-title-obj{
+        padding-left: 0;
+        padding-right: 0;
+        border-right: none;
+        border-left: none;
+    }
+
+    #map{
+            margin-top: -1em;
+    }
+    .title_ibj{
+        font-size: larger;
+    }

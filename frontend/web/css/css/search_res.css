@@ -1,0 +1,77 @@
+/*css для search res css*/
+.btn-default_w_border,.btn-default{
+	    text-transform: uppercase;
+    color: #a42465;
+    font-weight: bold;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.btn-default_w_border:hover,.btn-default:hover {
+         color: white;
+    background-color: #a42465;
+    border-color: #adadad;
+}
+.subscribe_link{
+	    font-family: 'Open Sans Condensed', sans-serif;
+
+    font-size: 14px;
+}
+.title_room{
+	font-size: larger;
+}
+
+.sortline .col-sm-8{
+	/*margin-left: 2em;*/
+}
+.title_item{
+	    font-size: larger;
+    font-weight: 600;
+    padding-top: 0.5em;
+}
+.description_room{
+	    text-indent: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+
+.icon-question{
+	    background-image: url("/img/verstka/question.png");
+    display: inline-block;
+     width: 42px;
+    height: 42px;
+
+  line-height: 14px;
+     vertical-align: sub;
+    background-position: 0px 5px;
+  background-repeat: no-repeat;
+  margin-top: 1px
+}
+
+.catalog_upper{
+	border-top: none;
+	border-left: none;
+	border-right: none;
+
+	-webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+ 
+}
+
+  .news-box{
+  	margin-bottom: 4em;
+  }
+
+  .news-title,.news-title a{
+  	    font-size: large;
+  	    color: black;
+  	    background-color: transparent;
+  }
+
+  .viewed_rooms{
+  	border: none;
+  }
+

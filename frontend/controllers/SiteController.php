@@ -72,6 +72,17 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
+    //      \Yii::$app->view->registerMetaTag([
+    //     'name' => 'Тимур для яху',
+    //     'content' => 'Description of the page... тИмупр'
+    
+    // ]);
+    //         \Yii::$app->view->registerMetaTag([
+    //     'name' => 'Тимур для гугла',
+    //     'content' => 'Description of the page... Гугл'
+    
+    // ]);
         return $this->render('index');
     }
 
