@@ -22,6 +22,11 @@ use common\models\UpsliderSearch;
 
 use common\models\RoomRecord;
 
+use common\models\PartnerRecord;
+
+use common\models\TestimonialsRecord;
+use common\models\NewsRecord;
+
 
 /**
  * Site controller
@@ -94,11 +99,22 @@ class SiteController extends Controller
     
     // ]);
         // if (($model = Upslider::findOne($id)) !== null) {
+                  // верхний слайдер 
              $upslider_provider=Upslider::find()->all();
-             $catalog_room_provider=RoomRecord::find()->all();
+              // три одинаковых слайдера
+              $catalog_room_provider=RoomRecord::find()->all();
+              $catalog_room_provider_exclusive=RoomRecord::find()->all();
+              $catalog_room_provider_latest=RoomRecord::find()->orderBy('updated_at DESC')->limit(24)->all();
+
+                 // партнеры слайдер
+              $partner_provider= PartnerRecord::find()->all();
+
+               $testimonials=TestimonialsRecord::find()->where(['status'=>'10'])->orderBy('updated_at DESC')->limit(4)->all();
+                 $news=NewsRecord::find()->where(['status'=>'10'])->orderBy('updated_at DESC')->limit(4)->all();
+
      //Yii::trace($upslider_provider);
 
-        return $this->render('index',['upslider_provider'=>$upslider_provider,'catalog_room_provider'=>$catalog_room_provider]);
+        return $this->render('index',['upslider_provider'=>$upslider_provider,'catalog_room_provider'=>$catalog_room_provider,'catalog_room_provider_exclusive'=>$catalog_room_provider_exclusive,'catalog_room_provider_latest'=>$catalog_room_provider_latest,'partner_provider'=>$partner_provider,'testimonials'=>$testimonials,'news'=>$news]);
     }
 
     /**

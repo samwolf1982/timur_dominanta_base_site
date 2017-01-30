@@ -10,7 +10,7 @@ $obj_counter=0;
 
 
                        <div id="<?=$id_widget?>" class="catalog_upper" >
-                            <div class="catalog-title"><span><?=$title_widget?> <?=count($data_provider);?>  <?php ?> </span></div>
+                            <div class="catalog-title"><span><?=$title_widget?> <?php ?> </span></div>
 
                             <div class="catalog">
 
@@ -19,12 +19,12 @@ $obj_counter=0;
                                     <br>
                                     <div id="<?=$id_slider?>" class="carousel slide" data-ride="carousel" data-interval="false" >
                                         <!-- Indicators -->
-                                        <ol class="carousel-indicators">
+                                     <!--    <ol class="carousel-indicators">
                                             <li data-target="#<?=$id_slider?>" data-slide-to="0" class="active"></li>
                                             <li data-target="#<?=$id_slider?>" data-slide-to="1"></li>
                                             <li data-target="#<?=$id_slider?>" data-slide-to="2"></li>
                                             <li data-target="#<?=$id_slider?>" data-slide-to="3"></li>
-                                        </ol>
+                                        </ol> -->
 
                                         <!-- Wrapper for slides -->
                                         <div class="carousel-inner" role="listbox">
@@ -42,7 +42,7 @@ $obj_counter=0;
 
 
 
-                                                   <!--  <?php foreach (range(0, 2) as $k => $v) {?> -->
+                                                  <?php foreach (range(0, 2) as $k => $v) {?>
 
 
                                                     <div class="col-sm-4 clear_padding wrap_item wrap_item_left ">
@@ -51,7 +51,7 @@ $obj_counter=0;
      <div class="thumbnail">
      <div class="wrap_img_thumb text-center">  
      <?php 
-     
+
      $json_img_arr=   json_decode( $data_provider[$obj_counter]->img);
 
     // Yii::trace($json_img_arr[0]->url);
@@ -123,10 +123,10 @@ $obj_counter=0;
 
                                        
 
-                                                 <!--    <?php  
+                                                    <?php  
 
                                                              }
-                                                    ?> -->
+                                                    ?> 
 
 
 

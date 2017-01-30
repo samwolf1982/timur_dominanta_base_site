@@ -9,6 +9,10 @@ use yii\helpers\Html;
 class HelloWidget extends Widget
 {
     public $message;
+     public $title;
+    public $data_provider;
+    public $id_widget;
+    public $id_slider;
 
     public function init()
     {
