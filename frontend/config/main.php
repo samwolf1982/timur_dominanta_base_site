@@ -41,7 +41,10 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-            ],
+                     'kvartira/<id:\d+>'=>'kvartira/view',
+
+                     // ['class' => 'frontend\utilities\RoomNameUrlRule'],  
+                        ],
         ],
         
     ],

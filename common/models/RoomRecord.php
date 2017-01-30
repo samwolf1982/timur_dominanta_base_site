@@ -35,7 +35,7 @@ class RoomRecord extends \yii\db\ActiveRecord
             [['id_room', 'created_at', 'updated_at'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
              [['img','description'], 'string'],
-            [['id_room', 'title',], 'string', 'max' => 255],
+            [['id_room', 'title','seo_url'], 'string', 'max' => 255],
         ];
     }
 
